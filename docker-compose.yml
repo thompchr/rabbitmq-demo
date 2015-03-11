@@ -1,0 +1,24 @@
+producer:
+  build: ./producer
+  volumes:
+  - ./producer:/opt/app
+  ports:
+   - "8080:8080"
+  links:
+   - queue
+
+consumer:
+  build: ./consumer
+  volumes:
+   - ./consumer:/opt/app
+  ports:
+   - "8081:8080"
+  links:
+   - queue
+
+queue:
+  image: dockerfile/rabbitmq
+  ports:
+   - "5672:5672"
+   - "15672:15672"
+
