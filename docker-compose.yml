@@ -16,8 +16,8 @@ consumer:
   links:
    - queue
 
-cassandraConsumer:
-  build: ./consumerCassandra
+consumercassandra:
+  build: ./consumer_cassandra
   volumes:
    - ./consumer_cassandra:/opt/app
   ports:
