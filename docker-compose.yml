@@ -16,9 +16,30 @@ consumer:
   links:
    - queue
 
+cassandraConsumer:
+  build: ./consumerCassandra
+  volumes:
+   - ./consumer_cassandra:/opt/app
+  ports:
+   - "8082:8080"
+  links:
+   - queue
+   - db
+
 queue:
   image: dockerfile/rabbitmq
   ports:
    - "5672:5672"
    - "15672:15672"
+db:
+ image: spotify/cassandra
+ expose:
+  - "7199"
+  - "7000"
+  - "7001"
+  - "9160"
+  - "9042"
+  - "22"
+  - "8012"
+  - "61621"
 

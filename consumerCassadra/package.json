@@ -1,0 +1,17 @@
+{
+  "name": "RabbitMQCassandra",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "cassandra-driver": "~2.0.0",
+    "hapi": "~8.4.0",
+    "handlebars": "~3.0.0"
+  }
+}
