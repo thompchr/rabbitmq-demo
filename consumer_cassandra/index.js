@@ -4,6 +4,12 @@
 var cassandra = require('cassandra-driver');
 var client = new cassandra.Client({contactPoints: ['192.168.59.103'], keyspace:'ks1'});
 var query = 'insert into test(key) values (test1)';
+
+client.connect(function(err, result) {
+    console.log('Connected.');
+});
+
+/** 
 client.execute(query, undefined, {prepare:false}, function(err){
    if (err){
        console.log(err);
@@ -18,3 +24,4 @@ client.execute(query, undefined, {prepare:false}, function(err){
         }
     });
 });
+*/
